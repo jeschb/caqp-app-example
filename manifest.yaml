@@ -1,24 +1,28 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: ms-dev
   labels:
     app: ms-dev
-  namespace: jeschb
+    app.kubernetes.io/component: ms-dev
+    app.kubernetes.io/instance: ms-dev
+    app.kubernetes.io/part-of: ms-dev
+    app.openshift.io/runtime: redhat
+  name: ms-dev
 spec:
   replicas: 2
   selector:
     matchLabels:
-      deployment: ms-dev
-  strategy:
-    type: RollingUpdate
+      app: ms-dev
+    type: Recreate
   template:
     metadata:
       labels:
         app: ms-dev
+        deploymentconfig: ms-dev
     spec:
       containers:
-      — name: ms-dev
-        image: default-route-openshift-image-registry.apps.dscluster1001.cajaarequipa.pe/jeschb/ms-dev:build-35
-        ports:
-        — containerPort: 8080
+        - name: ms-dev
+          image: image-registry.openshift-image-registry.svc:5000/jeschb/ms-dev:latest
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always

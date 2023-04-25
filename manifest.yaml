@@ -26,7 +26,7 @@ items:
       spec:
         containers:
           - name: APP_NAME
-            image: REGISTRY_URL/PROJECT_NAME/APP_NAME:latest
+            image: image-registry.openshift-image-registry.svc:5000/PROJECT_NAME/APP_NAME:latest
             ports:
             - name: tcp8080
               containerPort: 8080

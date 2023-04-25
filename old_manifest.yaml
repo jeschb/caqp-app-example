@@ -5,28 +5,28 @@ items:
   kind: Deployment
   metadata:
     labels:
-      app: APP_NAME
-      app.kubernetes.io/component: APP_NAME
-      app.kubernetes.io/instance: APP_NAME
-      app.kubernetes.io/part-of: APP_NAME
+      app: ms-dev
+      app.kubernetes.io/component: ms-dev
+      app.kubernetes.io/instance: ms-dev
+      app.kubernetes.io/part-of: ms-dev
       app.openshift.io/runtime: redhat
-    name: APP_NAME
-    namespace: PROJECT_NAME
+    name: ms-dev
+    namespace: jeschb
   spec:
     replicas: 2
     selector:
       matchLabels:
-        app: APP_NAME
+        app: ms-dev
       type: Recreate
     template:
       metadata:
         labels:
-          app: APP_NAME
-          deploymentconfig: APP_NAME
+          app: ms-dev
+          deploymentconfig: ms-dev
       spec:
         containers:
-          - name: APP_NAME
-            image: REGISTRY_URL/PROJECT_NAME/APP_NAME:latest
+          - name: ms-dev
+            image: image-registry.openshift-image-registry.svc:5000/jeschb/ms-dev:latest
             ports:
             - name: tcp8080
               containerPort: 8080
@@ -35,27 +35,27 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
-    name: APP_NAME
-    namespace: PROJECT_NAME
+    name: ms-dev
+    namespace: jeschb
   spec:
     ports:
-      - name: APP_NAME
+      - name: ms-dev
         protocol: TCP
         port: 80
         targetPort: 8080
     selector:
-      app: APP_NAME
+      app: ms-dev
     type: LoadBalancer
 - apiVersion: route.openshift.io/v1
   kind: Route
   metadata:
-    name: APP_NAME
-    namespace: PROJECT_NAME
+    name: ms-dev
+    namespace: jeschb
   spec:
-    host: APP_NAME-PROJECT_NAME.cajaarequipa.pe
+    host: ms-dev-jeschb.cajaarequipa.pe
     to:
       kind: Service
-      name: APP_NAME
+      name: ms-dev
       weight: 100
     port:
       targetPort: 8080

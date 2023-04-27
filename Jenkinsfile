@@ -1,2 +1,2 @@
- @Library('shared_libraries') _
+@Library('shared_libraries') _
 caqppipeline {}

@@ -18,7 +18,7 @@ items:
       - ReadWriteMany
     resources:
       requests:
-        storage: 2Gi
+        storage: 1Gi
     storageClassName: ocs-storagecluster-cephfs
     volumeMode: Filesystem
   status:
@@ -26,7 +26,7 @@ items:
     accessModes:
       - ReadWriteMany
     capacity:
-      storage: 2Gi
+      storage: 1Gi
 - apiVersion: apps/v1
   kind: Deployment
   metadata:

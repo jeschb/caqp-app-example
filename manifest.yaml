@@ -25,7 +25,7 @@ items:
           deploymentconfig: APP_NAME
       spec:
         volumes:
-          - name: LOGS-APP_NAME
+          - name: logs-APP_NAME
             persistentVolumeClaim:
               claimName: pvc-APP_NAME
         containers:
@@ -41,7 +41,7 @@ items:
             - secretRef:
                 name: APP_NAME
             volumeMounts:
-              - name: LOGS-APP_NAME
+              - name: logs-APP_NAME
                 mountPath: /logs
         restartPolicy: Always
 - apiVersion: v1

@@ -6,20 +6,12 @@ items:
   metadata:
     name: APP_NAME
     namespace: PROJECT_NAME
-    annotations:
-      pv.kubernetes.io/bind-completed: 'yes'
-      pv.kubernetes.io/bound-by-controller: 'yes'
-      volume.beta.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
-      volume.kubernetes.io/storage-provisioner: openshift-storage.cephfs.csi.ceph.com
-    finalizers:
-      - kubernetes.io/pvc-protection
   spec:
     accessModes:
       - ReadWriteMany
     resources:
       requests:
         storage: 1Gi
-    storageClassName: ocs-storagecluster-cephfs
     volumeMode: Filesystem
   status:
     phase: Bound

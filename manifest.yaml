@@ -24,6 +24,10 @@ items:
           app: APP_NAME
           deploymentconfig: APP_NAME
       spec:
+        volumes:
+          - name: LOGS-APP_NAME
+            persistentVolumeClaim:
+              claimName: pvc-APP_NAME
         containers:
           - name: APP_NAME
             image: image-registry.openshift-image-registry.svc:5000/PROJECT_NAME/APP_NAME:BUILD_NUMBER
@@ -36,6 +40,9 @@ items:
                 name: APP_NAME
             - secretRef:
                 name: APP_NAME
+            volumeMounts:
+              - name: LOGS-APP_NAME
+                mountPath: /logs
         restartPolicy: Always
 - apiVersion: v1
   kind: Service

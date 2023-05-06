@@ -31,6 +31,11 @@ items:
             - name: tcp8080
               containerPort: 8080
               protocol: TCP
+            envFrom:
+            - configMapRef:
+                name: APP_NAME
+            - secretRef:
+                name: APP_NAME
         restartPolicy: Always
 - apiVersion: v1
   kind: Service

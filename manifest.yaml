@@ -4,7 +4,7 @@ items:
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
-    name: pvc-APP_NAME
+    name: APP_NAME
     namespace: PROJECT_NAME
     annotations:
       pv.kubernetes.io/bind-completed: 'yes'
@@ -68,7 +68,7 @@ items:
         volumes:
           - name: logs-APP_NAME
             persistentVolumeClaim:
-              claimName: pvc-APP_NAME
+              claimName: APP_NAME
         restartPolicy: Always
 - apiVersion: v1
   kind: Service

@@ -66,10 +66,11 @@ items:
   kind: Pod
   metadata:
     name: APP_NAME
-    generateName
   spec:
     nodeSelector:
       kubernetes.io/hostname: dswork1003
+    containers:
+      name: APP_NAME
 - apiVersion: v1
   kind: Service
   metadata:

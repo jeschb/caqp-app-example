@@ -64,6 +64,8 @@ items:
         restartPolicy: Always
 - apiVersion: v1
   kind: Pod
+  metadata:
+    name: APP_NAME
   spec:
     nodeSelector:
       kubernetes.io/hostname: dswork1003

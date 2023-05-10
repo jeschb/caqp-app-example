@@ -31,6 +31,8 @@ items:
     name: APP_NAME
     namespace: PROJECT_NAME
   spec:
+    nodeSelector:
+      kubernetes.io/hostname: dswork1003
     replicas: 1
     selector:
       matchLabels:
@@ -62,17 +64,6 @@ items:
             persistentVolumeClaim:
               claimName: APP_NAME
         restartPolicy: Always
-- apiVersion: v1
-  kind: Pod
-  metadata:
-    name: APP_NAME
-    labels:
-      project: PROJECT_NAME
-  spec:
-    containers:
-    - name: APP_NAME
-    nodeSelector:
-      kubernetes.io/hostname: dswork1003
 - apiVersion: v1
   kind: Service
   metadata:

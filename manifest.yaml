@@ -66,11 +66,13 @@ items:
   kind: Pod
   metadata:
     name: APP_NAME
+    labels:
+      project: PROJECT_NAME
   spec:
+    containers:
+    - name: APP_NAME
     nodeSelector:
       kubernetes.io/hostname: dswork1003
-    containers:
-      name: APP_NAME
 - apiVersion: v1
   kind: Service
   metadata:

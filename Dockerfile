@@ -1,5 +1,4 @@
-FROM adoptopenjdk/openjdk11
-RUN apt-get update -qq \
-    && apt-get install -qqy apt-transport-https ca-certificates curl net-tools iputils-ping
+FROM eclipse-temurin:11.0.19_7-jdk-ubi9-minimal
 COPY target/*.jar /app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
+EXPOSE 8080/tcp

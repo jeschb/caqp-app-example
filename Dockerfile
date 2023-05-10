@@ -1,4 +1,3 @@
-FROM eclipse-temurin:11.0.18_10-jdk-alpine
-RUN apk add curl
+FROM adoptopenjdk/openjdk11
 COPY target/*.jar /app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]

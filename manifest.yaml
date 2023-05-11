@@ -62,9 +62,11 @@ items:
             persistentVolumeClaim:
               claimName: APP_NAME
         restartPolicy: Always
-        nodeName: dswork1003
         nodeSelector:
-          kubernetes.io/hostname: dswork1003
+          kubernetes.io/hostname: 
+            values:
+            - dswork1003
+            - dswork1004
 - apiVersion: v1
   kind: Service
   metadata:

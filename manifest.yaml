@@ -64,7 +64,7 @@ items:
         restartPolicy: Always
         nodeName:
         - matchExpressions:
-            operator: Or
+            operator: In
             values:
             - dswork1003
             - dswork1004

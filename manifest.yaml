@@ -63,7 +63,7 @@ items:
               claimName: APP_NAME
         restartPolicy: Always
         nodeSelector:
-          kubernetes.io/hostname: 
+          - kubernetes.io/hostname: 
             values:
             - dswork1003
             - dswork1004

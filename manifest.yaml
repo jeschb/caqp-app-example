@@ -63,9 +63,8 @@ items:
               claimName: APP_NAME
         restartPolicy: Always
         nodeName:
-            metadata:
-              labels:
-                tipo-nodo-conexion: dmznode
+          labels:
+            tipo-nodo-conexion: dmznode
 - apiVersion: v1
   kind: Service
   metadata:

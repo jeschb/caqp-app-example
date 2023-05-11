@@ -62,8 +62,10 @@ items:
             persistentVolumeClaim:
               claimName: APP_NAME
         restartPolicy: Always
-        nodeSelector:
-          - kubernetes.io/hostname: 
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
             values:
             - dswork1003
             - dswork1004

@@ -62,9 +62,8 @@ items:
             persistentVolumeClaim:
               claimName: APP_NAME
         restartPolicy: Always
-        nodeName:
-          labels:
-            tipo-nodo-conexion: dmznode
+        nodeSelector:
+          tipo-nodo-conexion: dmznode
 - apiVersion: v1
   kind: Service
   metadata:

@@ -63,7 +63,8 @@ items:
               claimName: APP_NAME
         restartPolicy: Always
         nodeName: 
-          - values:
+          - name: dmznodes
+            values:
             - dswork1003
             - dswork1004
 - apiVersion: v1

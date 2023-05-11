@@ -65,7 +65,7 @@ items:
         nodeSelectorTerms:
         - matchExpressions:
           - key: kubernetes.io/hostname
-            operator: In
+            operator: Or
             values:
             - dswork1003
             - dswork1004

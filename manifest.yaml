@@ -77,14 +77,14 @@ items:
         targetPort: 8080
     selector:
       app: APP_NAME
-    type: LoadBalancer
+    type: ClusterIP
 - apiVersion: route.openshift.io/v1
   kind: Route
   metadata:
     name: APP_NAME
     namespace: PROJECT_NAME
   spec:
-    host: APP_NAME-PROJECT_NAME.cajaarequipa.pe
+    host: APP_NAME-PROJECT_NAME.apps.dscluster1001.cajaarequipa.pe
     to:
       kind: Service
       name: APP_NAME

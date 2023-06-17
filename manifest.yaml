@@ -44,7 +44,7 @@ items:
       spec:
         containers:
           - name: APP_NAME
-            image: OSC_REGISTRY
+            image: OSC_REGISTRY/PROJECT_NAME/APP_NAME:BUILD_NUMBER
             ports:
             - name: tcp8080
               containerPort: 8080

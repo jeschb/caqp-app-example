@@ -91,7 +91,7 @@ items:
     name: APP_NAME
     namespace: PROJECT_NAME
   spec:
-    host: APP_NAME-PROJECT_NAME.apps.dscluster1001.cajaarequipa.pe
+    host: APP_NAME-PROJECT_NAME.OSC_ROUTE
     to:
       kind: Service
       name: APP_NAME

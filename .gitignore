@@ -67,4 +67,3 @@ hs_err_pid*
 .cache-main
 .scala_dependencies
 .worksheet
-/target/
